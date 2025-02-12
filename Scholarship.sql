@@ -1,11 +1,11 @@
 SELECT DISTINCT
 	s.full_name, 
 	s.student_id, 
-    case
-    when s.degree_id = 101 then 5000
-    when s.degree_id = 102 then 7500
-    else 10000
-end as scholarship
+    CASE
+    WHEN s.degree_id = 101 then 5000
+    WHEN s.degree_id = 102 then 7500
+    ELSE 10000
+END AS scholarship
 FROM students s
 JOIN marks AS m on m.student_id = s.student_id
 JOIN subjects AS sb ON sb.subject_id = m.subject_id
@@ -21,4 +21,4 @@ s.student_id NOT IN (SELECT teacher_id FROM teachers) AND
 s.graduated_dt IS NULL AND
 s.academic_leave_flg = 0 AND
 s.expulsion_flg = 0
-order by scholarship desc;
+ORDER BY scholarship DESC;
