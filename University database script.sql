@@ -1,14 +1,14 @@
 create table students (
-student_id integer,
-full_name varchar(255),
-entered_dt date,
+student_id integer NOT NULL,
+full_name varchar(255) NOT NULL,
+entered_dt date NOT NULL,
 graduated_dt date,
-academic_leave_flg integer,
-expulsion_flg integer,
-degree_id integer,
-group_id integer,
-branch_id integer,
-specialty varchar(255)
+academic_leave_flg integer NOT NULL,
+expulsion_flg integer NOT NULL,
+degree_id integer NOT NULL,
+group_id integer NOT NULL,
+branch_id integer NOT NULL,
+specialty varchar(255) NOT NULL
 );
 
 INSERT INTO students VALUES(101218,'Khaninov Semyon Sokratovich','2018-09-01','2022-07-01',0,0,101,218,1,'Applied Informatics');
@@ -818,8 +818,8 @@ INSERT INTO students (student_id, full_name, entered_dt, graduated_dt, academic_
 (510123, 'Рожкова Олеся Владимировна', '2022-09-01', NULL, 0, 1, 102, 505, 5, 'applied informatics');
 
 create table branches (
-branch_id integer,
-branch_name varchar (30)
+branch_id integer NOT NULL,
+branch_name varchar (30) NOT NULL
 );
 
 INSERT INTO branches VALUES(1, 'Мосвка');
@@ -829,10 +829,10 @@ INSERT INTO branches VALUES(4, 'Екатеринбург');
 INSERT INTO branches VALUES(5, 'Пенза');
 
 create table marks (
-student_id integer,
-subject_id integer,
-mark integer,
-mark_dt date
+student_id integer NOT NULL,
+subject_id integer NOT NULL,
+mark integer NOT NULL,
+mark_dt date NOT NULL
 );
 
 INSERT INTO marks VALUES(101218, 201, 5,  '2020-11-05');
@@ -3871,9 +3871,9 @@ INSERT INTO marks (student_id, subject_id, mark, mark_dt) VALUES
 (510123,212,5,  '2022-11-12');
 
 create table subjects (
-subject_id integer,
-subject_name varchar(255),
-teacher_id integer
+subject_id integer NOT NULL,
+subject_name varchar(255) NOT NULL,
+teacher_id integer NOT NULL
 );
 
 INSERT INTO subjects VALUES(201,  'Linear algebra', 501);
@@ -3968,11 +3968,11 @@ INSERT INTO subjects VALUES(236,   'Theory of algorithms', 546);
 INSERT INTO subjects VALUES(236,   'Theory of algorithms', 520);
 
 create table teachers (
-teacher_id integer,
-full_name varchar(255),
+teacher_id integer NOT NULL,
+full_name varchar(255) NOT NULL,
 start_dt date,
 end_dt date,
-degree_id integer
+degree_id integer NOT NULL
 );
 
 INSERT INTO teachers VALUES(102221,  'Temkina Maria Fedorovna',  '2021-09-01', null, 103);
@@ -4041,8 +4041,8 @@ INSERT INTO teachers VALUES(557,  'Goliczyn Pitirim Aksentevich',  '2021-09-01',
 
 
 create table degree (
-degree_id integer,
-degree_name varchar(100)
+degree_id integer NOT NULL,
+degree_name varchar(100) NOT NULL
 );
 
 insert into degree values (101, 'Bachelor');
