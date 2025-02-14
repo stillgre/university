@@ -3916,6 +3916,9 @@ INSERT INTO discipline VALUES(234, 'Data management');
 INSERT INTO discipline VALUES(235, 'Software Engineering');    
 INSERT INTO discipline VALUES(236, 'Theory of algorithms');   
 
+ALTER TABLE marks
+ADD FOREIGN KEY (subject_id) REFERENCES discipline(discipline_id); 
+
 create table teachers (
 teacher_id INT PRIMARY KEY NOT NULL,
 full_name VARCHAR(255) NOT NULL,
